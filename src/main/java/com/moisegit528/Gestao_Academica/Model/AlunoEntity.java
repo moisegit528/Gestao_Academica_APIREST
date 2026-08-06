@@ -1,0 +1,36 @@
+package com.moisegit528.Gestao_Academica.Model;
+
+
+import jakarta.persistence.*;
+import lombok.*;
+
+import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.UUID;
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+@Builder
+@Entity(name = "aluno")
+public class AlunoEntity {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private UUID id;
+    private String nome;
+    private String email;
+    private String telefone;
+    private LocalDate dataNascimento;
+    private LocalDate dataMatricula;
+    private boolean status;
+
+    @OneToMany(mappedBy = "aluno")
+    private Set<MatriculaEntity> matriculas = new HashSet<>();
+
+    @OneToMany(mappedBy = "aluno")
+    private Set<AlunoCursoEntity> cursos = new HashSet<>();
+
+}
