@@ -5,6 +5,8 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.UUID;
 
 @NoArgsConstructor
@@ -23,6 +25,13 @@ public class MatriculaEntity {
     private double notaFinal;
 
     @ManyToOne
-    @JoinColumn(name = "aluno_matricula")
+    @JoinColumn(name = "turma_id")
+    private TurmaEntity turma;
+
+    @ManyToOne
+    @JoinColumn(name = "aluno_id")
     private AlunoEntity aluno;
+
+    @OneToMany(mappedBy = "matricula")
+    private Set<NotaEntity> notasAluno = new HashSet<>();
 }

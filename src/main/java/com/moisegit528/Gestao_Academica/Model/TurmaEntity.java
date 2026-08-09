@@ -4,6 +4,8 @@ package com.moisegit528.Gestao_Academica.Model;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.HashSet;
+import java.util.Set;
 import java.util.UUID;
 
 @NoArgsConstructor
@@ -21,6 +23,12 @@ public class TurmaEntity {
     private Integer semestre;
 
     @ManyToOne
-    @JoinColumn(name = "disciplina_da_turma")
+    @JoinColumn(name = "disciplina_id")
     private DisciplinaEntity disciplina;
+
+    @OneToMany(mappedBy = "turma")
+    private Set<MatriculaEntity> matricula = new HashSet<>();
+
+    @OneToMany(mappedBy = "turma")
+    private Set<AvaliacaoEntity>  avaliacao = new HashSet<>();
 }

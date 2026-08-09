@@ -1,6 +1,5 @@
 package com.moisegit528.Gestao_Academica.Model;
 
-
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -18,10 +17,13 @@ public class ProfessorDisciplinaEntity {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
     private Integer semestre;
+    private Integer ano;
 
     @ManyToOne
-    private DisciplinaEntity disciplina;
-
-    @ManyToOne
+    @JoinColumn(name = "professor_id")
     private ProfessorEntity professor;
+
+    @ManyToOne
+    @JoinColumn(name = "disciplina_id")
+    private DisciplinaEntity disciplina;
 }

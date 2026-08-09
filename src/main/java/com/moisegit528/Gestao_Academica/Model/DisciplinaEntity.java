@@ -19,12 +19,16 @@ public class DisciplinaEntity {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
     private String nome;
-    private String codigoDisciplina; // cada disciplina terá um código especifico (matemtica: 1, inglês: 2 etc...)
+    private String codigoDisciplina; // cada disciplina terá um código especifico (matematica: 1, inglês: 2 etc...)
     private Integer cargaHoraria;
 
-    @OneToMany(mappedBy = "disciplina")
-    private Set<ProfessorDisciplinaEntity> disciplinaeProfessor = new HashSet<>();
+    @ManyToOne
+    @JoinColumn(name = "curso_id")
+    private CursoEntity curso;
 
     @OneToMany(mappedBy = "disciplina")
-    private Set<TurmaEntity>  turma = new HashSet<>();
+    private Set<ProfessorDisciplinaEntity> professorDisciplina = new HashSet<>();
+
+    @OneToMany(mappedBy = "disciplina")
+    private Set<TurmaEntity> turma = new HashSet<>();
 }

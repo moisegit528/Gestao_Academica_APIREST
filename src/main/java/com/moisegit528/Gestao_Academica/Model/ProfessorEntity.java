@@ -25,5 +25,5 @@ public class ProfessorEntity {
     private boolean status;
 
     @OneToMany(mappedBy = "professor")
-    private Set<ProfessorDisciplinaEntity> professoreDisciplina = new HashSet<>();
+    private Set<ProfessorDisciplinaEntity>  professorDisciplina = new  HashSet<>();
 }

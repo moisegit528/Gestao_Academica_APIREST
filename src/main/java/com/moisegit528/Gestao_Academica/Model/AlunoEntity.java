@@ -1,9 +1,7 @@
 package com.moisegit528.Gestao_Academica.Model;
 
-
 import jakarta.persistence.*;
 import lombok.*;
-
 import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
@@ -27,10 +25,10 @@ public class AlunoEntity {
     private LocalDate dataMatricula;
     private boolean status;
 
+    @OneToOne
+    @JoinColumn(name = "curso_id")
+    private  CursoEntity curso;
+
     @OneToMany(mappedBy = "aluno")
     private Set<MatriculaEntity> matriculas = new HashSet<>();
-
-    @OneToMany(mappedBy = "aluno")
-    private Set<AlunoCursoEntity> cursos = new HashSet<>();
-
 }

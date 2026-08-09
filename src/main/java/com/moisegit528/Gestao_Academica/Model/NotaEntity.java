@@ -1,9 +1,6 @@
 package com.moisegit528.Gestao_Academica.Model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.UUID;
@@ -20,4 +17,12 @@ public class NotaEntity {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
     private double notaFinal;
+
+    @ManyToOne
+    @JoinColumn(name = "avaliacao_id")
+    private AvaliacaoEntity avaliacao;
+
+    @ManyToOne
+    @JoinColumn(name = "matricula_id")
+    private MatriculaEntity matricula;
 }

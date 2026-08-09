@@ -24,6 +24,10 @@ public class CursoEntity {
     private Integer cargaHorariaTotal;
     private boolean status;
 
+    @OneToOne
+    @JoinColumn(name = "aluno_id")
+    private AlunoEntity aluno;
+
     @OneToMany(mappedBy = "curso")
-    private Set<AlunoCursoEntity> alunos = new HashSet<>();
+    private Set<DisciplinaEntity>  disciplina = new HashSet<>();
 }
