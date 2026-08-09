@@ -19,7 +19,7 @@ public class TurmaEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
-    private String codigoTurma;
+    private Integer codigoTurma;
     private Integer semestre;
 
     @ManyToOne

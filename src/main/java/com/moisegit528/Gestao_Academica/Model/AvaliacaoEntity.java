@@ -13,14 +13,14 @@ import java.util.UUID;
 @Getter
 @Setter
 @Builder
-@Entity(name = "avaliacao")
+@Entity(name = "avaliacao") // Tipo de avaliacao > PROVA.
 public class AvaliacaoEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
     private String nomeAvalicao; // matematica, fisica, portugues etc...
-    private double nota;
+    private double notaParcial; // nota para cada avaliacao
     private LocalDate dataAplicacao; // dia que foi aplicado a avaliacao.
 
     @ManyToOne

@@ -19,7 +19,7 @@ public class CursoEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
-    private String nome;
+    private String nomeCurso;// mostrar nome, descrição e carga horária na busca desse curso.
     private String descricao;
     private Integer cargaHorariaTotal;
     private boolean status;

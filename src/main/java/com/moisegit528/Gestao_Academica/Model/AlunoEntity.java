@@ -2,6 +2,8 @@ package com.moisegit528.Gestao_Academica.Model;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
+
 import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
@@ -22,6 +24,7 @@ public class AlunoEntity {
     private String email;
     private String telefone;
     private LocalDate dataNascimento;
+    @CreationTimestamp
     private LocalDate dataMatricula;
     private boolean status;
 

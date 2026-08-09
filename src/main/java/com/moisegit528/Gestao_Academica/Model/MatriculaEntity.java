@@ -20,6 +20,7 @@ public class MatriculaEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
+    private Integer numeroMatricula;
     private LocalDate dataMatricula;
     private boolean statusMatricula;
     private double notaFinal;

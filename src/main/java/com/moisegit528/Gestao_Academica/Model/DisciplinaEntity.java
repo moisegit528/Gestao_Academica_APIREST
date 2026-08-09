@@ -18,8 +18,8 @@ public class DisciplinaEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
-    private String nome;
-    private String codigoDisciplina; // cada disciplina terá um código especifico (matematica: 1, inglês: 2 etc...)
+    private String nomeDisciplina;//mostrar nome, código e carga horária da disciplina, na busca.
+    private String codigoDisciplina; //cada disciplina um código especifico(matematica: 1, inglês: 2 etc...)
     private Integer cargaHoraria;
 
     @ManyToOne

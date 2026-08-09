@@ -22,7 +22,6 @@ public class ProfessorEntity {
     private String email;
     private String telefone;
     private String materia; // qual a materia o professor ensina.
-    private boolean status;
 
     @OneToMany(mappedBy = "professor")
     private Set<ProfessorDisciplinaEntity>  professorDisciplina = new  HashSet<>();
