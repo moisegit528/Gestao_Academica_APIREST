@@ -26,7 +26,7 @@ public class AlunoEntity {
     private LocalDate dataNascimento;
     @CreationTimestamp
     private LocalDate dataMatricula;
-    private boolean status;
+    private boolean statusMatricula; // add function for automatic generation.
 
     @OneToOne
     @JoinColumn(name = "curso_id")

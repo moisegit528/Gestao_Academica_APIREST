@@ -22,7 +22,7 @@ public class CursoEntity {
     private String nomeCurso;// mostrar nome, descrição e carga horária na busca desse curso.
     private String descricao;
     private Integer cargaHorariaTotal;
-    private boolean status;
+    private boolean statusCurso; // locked, progress and completed.
 
     @OneToOne
     @JoinColumn(name = "aluno_id")

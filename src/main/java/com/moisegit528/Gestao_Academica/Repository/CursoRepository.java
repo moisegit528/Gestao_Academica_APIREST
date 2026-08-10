@@ -8,5 +8,5 @@ import java.util.UUID;
 
 public interface CursoRepository extends JpaRepository<CursoEntity, UUID> {
     Optional<CursoEntity> findBynomeCurso(String nomeCurso);
-    //retornar nome, descrição e carga horária na busca desse curso.
+    //retornar nome, descrição, carga horária e status na busca desse curso.
 }

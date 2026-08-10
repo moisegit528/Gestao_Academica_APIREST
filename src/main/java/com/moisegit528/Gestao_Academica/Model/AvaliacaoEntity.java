@@ -19,7 +19,7 @@ public class AvaliacaoEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
-    private String nomeAvalicao; // matematica, fisica, portugues etc...
+    private String nomeAvaliacao; // matematica, fisica, portugues etc...
     private double notaParcial; // nota para cada avaliacao
     private LocalDate dataAplicacao; // dia que foi aplicado a avaliacao.
 

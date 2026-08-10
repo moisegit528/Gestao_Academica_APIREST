@@ -22,7 +22,7 @@ public class MatriculaEntity {
     private UUID id;
     private Integer numeroMatricula;
     private LocalDate dataMatricula;
-    private boolean statusMatricula;
+    private boolean statusMatricula; // locked, progress and completed.
     private double notaFinal;
 
     @ManyToOne
