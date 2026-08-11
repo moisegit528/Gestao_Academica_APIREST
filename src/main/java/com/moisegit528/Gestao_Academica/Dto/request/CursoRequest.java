@@ -1,5 +1,6 @@
 package com.moisegit528.Gestao_Academica.Dto.request;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 
@@ -10,10 +11,10 @@ import lombok.*;
 @Builder
 public class CursoRequest {
 
-    @NotBlank
+    @JsonProperty(required = true)
     private String nomeCurso;
-    @NotBlank
+    @JsonProperty(required = true)
     private String descricao;
-    @NotBlank
+    @JsonProperty(required = true)
     private Integer cargaHorariaTotal;
 }

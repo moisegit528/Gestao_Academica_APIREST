@@ -1,6 +1,6 @@
 package com.moisegit528.Gestao_Academica.Dto.request;
 
-import jakarta.validation.constraints.NotBlank;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 
 @NoArgsConstructor
@@ -8,12 +8,12 @@ import lombok.*;
 @Getter
 @Setter
 @Builder
-public class DisiciplinaRequest {
+public class DisciplinaRequest {
 
-    @NotBlank
+    @JsonProperty(required = true)
     private String nomeDisciplina;
-    @NotBlank
+    @JsonProperty(required = true)
     private String codigoDisciplina; //cada disciplina um código especifico(matematica: 1, inglês: 2 etc...)
-    @NotBlank
+    @JsonProperty(required = true)
     private Integer cargaHoraria;
 }

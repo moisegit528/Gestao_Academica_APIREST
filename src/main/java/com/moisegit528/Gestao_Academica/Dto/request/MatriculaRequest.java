@@ -1,6 +1,7 @@
 package com.moisegit528.Gestao_Academica.Dto.request;
 
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 
@@ -13,10 +14,10 @@ import java.time.LocalDate;
 @Builder
 public class MatriculaRequest {
 
-    @NotBlank
+    @JsonProperty(required = true)
     private Integer numeroMatricula;
-    @NotBlank
+    @JsonProperty(required = true)
     private LocalDate dataMatricula;
-    @NotBlank
+    @JsonProperty(required = true)
     private boolean statusMatricula;
 }

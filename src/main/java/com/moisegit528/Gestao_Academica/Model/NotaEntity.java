@@ -1,6 +1,7 @@
 package com.moisegit528.Gestao_Academica.Model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 
 import java.util.UUID;
@@ -16,6 +17,7 @@ public class NotaEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
+    @NotBlank
     private double notaFinal;
 
     @ManyToOne

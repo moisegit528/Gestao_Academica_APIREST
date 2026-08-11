@@ -2,6 +2,7 @@ package com.moisegit528.Gestao_Academica.Model;
 
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 
 import java.util.HashSet;
@@ -19,8 +20,11 @@ public class CursoEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
+    @NotBlank
     private String nomeCurso;// mostrar nome, descrição e carga horária na busca desse curso.
+    @NotBlank
     private String descricao;
+    @NotBlank
     private Integer cargaHorariaTotal;
     private boolean statusCurso; // locked, progress and completed.
 

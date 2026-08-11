@@ -2,6 +2,7 @@ package com.moisegit528.Gestao_Academica.Model;
 
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 
 import java.time.LocalDate;
@@ -20,9 +21,13 @@ public class MatriculaEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
+    @NotBlank
     private Integer numeroMatricula;
+    @NotBlank
     private LocalDate dataMatricula;
+    @NotBlank
     private boolean statusMatricula; // locked, progress and completed.
+    @NotBlank
     private double notaFinal;
 
     @ManyToOne

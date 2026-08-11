@@ -1,6 +1,7 @@
 package com.moisegit528.Gestao_Academica.Dto.request;
 
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 
@@ -13,12 +14,12 @@ import java.time.LocalDate;
 @Builder
 public class AlunoRequest {
 
-    @NotBlank
+    @JsonProperty(required = true)
     private String nome;
-    @NotBlank
+    @JsonProperty(required = true)
     private String email;
-    @NotBlank
+    @JsonProperty(required = true)
     private String telefone;
-    @NotBlank
+    @JsonProperty(required = true)
     private LocalDate dataNascimento;
 }

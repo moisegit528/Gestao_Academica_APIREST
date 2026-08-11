@@ -1,6 +1,7 @@
 package com.moisegit528.Gestao_Academica.Model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 
@@ -20,9 +21,13 @@ public class AlunoEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
+    @NotBlank
     private String nome;
+    @NotBlank
     private String email;
+    @NotBlank
     private String telefone;
+    @NotBlank
     private LocalDate dataNascimento;
     @CreationTimestamp
     private LocalDate dataMatricula;
