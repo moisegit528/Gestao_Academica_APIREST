@@ -19,4 +19,3 @@ public interface AlunoMapper {
     AlunoResponse responseAluno(AlunoEntity entityAluno); // convert entity to response
     List<AlunoResponse> listaResponse(List<AlunoEntity> listaEntity); // convert list entity to list response
 }
-    
