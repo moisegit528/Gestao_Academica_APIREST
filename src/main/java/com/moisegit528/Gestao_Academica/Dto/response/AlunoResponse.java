@@ -12,7 +12,7 @@ import java.time.LocalDate;
 @Builder
 public class AlunoResponse {
 
-    private String email;
+    private String nome;
     private LocalDate dataMatricula;
     private boolean statusMatricula;
 }

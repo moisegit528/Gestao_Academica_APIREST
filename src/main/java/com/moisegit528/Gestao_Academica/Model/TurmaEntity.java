@@ -2,6 +2,7 @@ package com.moisegit528.Gestao_Academica.Model;
 
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 
 import java.util.HashSet;
@@ -19,7 +20,9 @@ public class TurmaEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
+    @NotBlank
     private Integer codigoTurma;
+    @NotBlank
     private Integer semestre;
 
     @ManyToOne

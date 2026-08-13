@@ -13,10 +13,10 @@ import java.util.List;
 public interface AlunoMapper {
 
     @Mapping(target = "id",  ignore = true)
-    @Mapping(target = "dataMatriula", ignore = true)
-    @Mapping(target = "statusMatriula", ignore = true)
-    AlunoEntity entityAluno(AlunoRequest requestAluno);
-    AlunoRequest requestAluno(AlunoEntity entityAluno);
-    List<AlunoResponse> listaResponse(List<AlunoEntity> listaEntity);
+    @Mapping(target = "dataMatricula", ignore = true)
+    @Mapping(target = "statusMatricula", ignore = true)
+    AlunoEntity entityAluno(AlunoRequest requestAluno); // convert request to entity
+    AlunoResponse responseAluno(AlunoEntity entityAluno); // convert entity to response
+    List<AlunoResponse> listaResponse(List<AlunoEntity> listaEntity); // convert list entity to list response
 }
     

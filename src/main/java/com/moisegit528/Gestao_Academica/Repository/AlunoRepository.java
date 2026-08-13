@@ -7,6 +7,6 @@ import java.util.Optional;
 import java.util.UUID;
 
 public interface AlunoRepository extends JpaRepository<AlunoEntity, UUID> {
-    Optional<AlunoEntity> findByEmail(String email);
+    AlunoEntity findByEmail(String email);
     //retornar email, data e status da matricula.
 }
