@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.moisegit528</groupId>
-	<artifactId>Gestao_Academica</artifactId>
+	<artifactId>Gestao_Academica_APIREST</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name/>
 	<description/>
