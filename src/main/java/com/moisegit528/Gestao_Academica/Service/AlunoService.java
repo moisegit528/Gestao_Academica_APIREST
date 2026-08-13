@@ -33,4 +33,9 @@ public class AlunoService {
         return alunoMapper.responseAluno(alunoRepository.findByEmail(email));
     }
 
+    // DELETE - delete student for email.
+    void deleteByEmail(String email){
+        alunoRepository.deleteByEmail(email);
+    }
+
 }
