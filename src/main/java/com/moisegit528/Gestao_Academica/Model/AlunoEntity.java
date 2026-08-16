@@ -2,6 +2,8 @@ package com.moisegit528.Gestao_Academica.Model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Past;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 
@@ -27,11 +29,17 @@ public class AlunoEntity {
     private String email;
     @NotBlank
     private String telefone;
-    @NotBlank
+    @NotNull
+    @Past
     private LocalDate dataNascimento;
     @CreationTimestamp
     private LocalDate dataMatricula;
-    private boolean statusMatricula; // add function for automatic generation.
+    private boolean statusMatricula;
+    @PrePersist
+    public void prePersist() {
+        this.statusMatricula = true;
+    }
+
 
     @OneToOne
     @JoinColumn(name = "curso_id")

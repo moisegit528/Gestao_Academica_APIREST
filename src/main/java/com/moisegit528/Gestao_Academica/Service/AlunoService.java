@@ -19,8 +19,8 @@ public class AlunoService {
     private final AlunoMapper alunoMapper;
 
     // POST - creates a student in the repository
-    public void createAluno(AlunoRequest alunoRequest) {
-        alunoRepository.save(alunoMapper.entityAluno(alunoRequest));//the requisition and converted for entity with "alunoMapper", shortly after and save in "alunoRepository".
+    public void createAluno(AlunoRequest requestAluno) {
+        alunoRepository.save(alunoMapper.entityAluno(requestAluno));//the requisition and converted for entity with "alunoMapper", shortly after and save in "alunoRepository".
     }
 
     // GET - search for all student
