@@ -4,11 +4,9 @@ package com.moisegit528.Gestao_Academica.Service;
 import com.moisegit528.Gestao_Academica.Dto.request.AlunoRequest;
 import com.moisegit528.Gestao_Academica.Dto.response.AlunoResponse;
 import com.moisegit528.Gestao_Academica.Mapstruct.AlunoMapper;
-import com.moisegit528.Gestao_Academica.Model.AlunoEntity;
 import com.moisegit528.Gestao_Academica.Repository.AlunoRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 @Service

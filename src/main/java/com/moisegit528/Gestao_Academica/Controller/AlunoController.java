@@ -1,14 +1,15 @@
 package com.moisegit528.Gestao_Academica.Controller;
 
 import com.moisegit528.Gestao_Academica.Dto.request.AlunoRequest;
+import com.moisegit528.Gestao_Academica.Dto.response.AlunoResponse;
 import com.moisegit528.Gestao_Academica.Mapstruct.AlunoMapper;
 import com.moisegit528.Gestao_Academica.Repository.AlunoRepository;
 import com.moisegit528.Gestao_Academica.Service.AlunoService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RequiredArgsConstructor
 @RestController
@@ -22,5 +23,11 @@ public class AlunoController {
     @PostMapping
     public void createAluno(@RequestBody AlunoRequest alunoRequest) {
         alunoService.createAluno(alunoRequest);
+    }
+
+    @GetMapping("/")
+    @ResponseStatus(HttpStatus.OK)
+    public List<AlunoResponse> listAlunos() {
+        return alunoService.listAlunos();
     }
 }
