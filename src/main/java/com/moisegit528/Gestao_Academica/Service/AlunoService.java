@@ -2,7 +2,9 @@ package com.moisegit528.Gestao_Academica.Service;
 
 
 import com.moisegit528.Gestao_Academica.Dto.request.AlunoRequest;
+import com.moisegit528.Gestao_Academica.Dto.request.AlunoUpdateRequest;
 import com.moisegit528.Gestao_Academica.Dto.response.AlunoResponse;
+import com.moisegit528.Gestao_Academica.Exception.NotFoundException;
 import com.moisegit528.Gestao_Academica.Mapstruct.AlunoMapper;
 import com.moisegit528.Gestao_Academica.Model.AlunoEntity;
 import com.moisegit528.Gestao_Academica.Repository.AlunoRepository;
@@ -28,15 +30,24 @@ public class AlunoService {
     }
 
     // GET - search by e-mail
-    public AlunoResponse findByEmail(String email){
-        
-        return alunoMapper.responseAluno(alunoRepository.findByEmail(email));
+    public AlunoResponse findByEmail(String email) throws NotFoundException {
+        AlunoEntity alunos = alunoRepository.findByEmail(email)
+                .orElseThrow(() -> new NotFoundException("Email não encontrado"));
+        return alunoMapper.responseAluno(alunos);
     }
 
     // DELETE - delete by email
     public void deleteByEmail(String email){
         alunoRepository.deleteByEmail(email);
 
+    }
+
+    // PUT - update by email
+    public AlunoEntity updateAluno(AlunoUpdateRequest updateRequest) throws NotFoundException {
+        AlunoEntity update = alunoRepository.updateAluno(updateRequest.getEmail())
+                        .orElseThrow(()-> new NotFoundException("Aluno não encontrado!"));
+        alunoRepository.save(alunoMapper.entityAluno(updateRequest));
+        return alunoMapper.
     }
 
 }
