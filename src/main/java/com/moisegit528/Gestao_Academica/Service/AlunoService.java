@@ -4,6 +4,7 @@ package com.moisegit528.Gestao_Academica.Service;
 import com.moisegit528.Gestao_Academica.Dto.request.AlunoRequest;
 import com.moisegit528.Gestao_Academica.Dto.response.AlunoResponse;
 import com.moisegit528.Gestao_Academica.Mapstruct.AlunoMapper;
+import com.moisegit528.Gestao_Academica.Model.AlunoEntity;
 import com.moisegit528.Gestao_Academica.Repository.AlunoRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -28,7 +29,14 @@ public class AlunoService {
 
     // GET - search by e-mail
     public AlunoResponse findByEmail(String email){
+        
         return alunoMapper.responseAluno(alunoRepository.findByEmail(email));
+    }
+
+    // DELETE - delete by email
+    public void deleteByEmail(String email){
+        alunoRepository.deleteByEmail(email);
+
     }
 
 }

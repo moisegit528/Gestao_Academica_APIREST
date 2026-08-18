@@ -16,9 +16,7 @@ import java.util.List;
 @RequestMapping("/aluno")
 public class AlunoController {
 
-    private final AlunoRepository alunoRepository;
     private final AlunoService alunoService;
-    private final AlunoMapper alunoMapper;
 
     @PostMapping
     public void createAluno(@RequestBody AlunoRequest alunoRequest) {
@@ -29,5 +27,17 @@ public class AlunoController {
     @ResponseStatus(HttpStatus.OK)
     public List<AlunoResponse> listAlunos() {
         return alunoService.listAlunos();
+    }
+
+    @GetMapping("/{email}")
+    @ResponseStatus(HttpStatus.OK)
+    public AlunoResponse findByEmail(@PathVariable String email) {
+        return alunoService.findByEmail(email);
+    }
+
+    @DeleteMapping("/delete/{email}")
+    @ResponseStatus(HttpStatus.OK)
+    public void deleteByEmail(@PathVariable String email) {
+        alunoService.deleteByEmail(email);
     }
 }

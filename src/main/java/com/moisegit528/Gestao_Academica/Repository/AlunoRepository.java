@@ -9,4 +9,5 @@ import java.util.UUID;
 public interface AlunoRepository extends JpaRepository<AlunoEntity, UUID> {
     AlunoEntity findByEmail(String email);
     //retornar email, data e status da matricula.
+    Optional<AlunoEntity> deleteByEmail(String email);
 }
