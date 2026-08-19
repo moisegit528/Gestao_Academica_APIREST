@@ -13,6 +13,5 @@ public interface AlunoRepository extends JpaRepository<AlunoEntity, UUID> {
     //retornar email, data e status da matricula.
     @Transactional
     Optional<AlunoEntity> deleteByEmail(String email);
-
-    Optional<AlunoEntity> updateAluno(String email);
 }
+
