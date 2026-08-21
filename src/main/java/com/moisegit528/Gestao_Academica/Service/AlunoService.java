@@ -37,18 +37,17 @@ public class AlunoService {
         return alunoMapper.responseAluno(alunos);
     }
 
-    // DELETE - delete by email
-    public void deleteByEmail(String email){
-        alunoRepository.deleteByEmail(email);
-
-    }
-
     // PUT - update by email
     public AlunoUpdateResponse updateAluno(AlunoUpdateRequest updateRequest, String email) throws NotFoundException {
         AlunoEntity update = alunoRepository.findByEmail(email)
                         .orElseThrow(()-> new NotFoundException("Aluno não encontrado!"));
-        alunoMapper.responseAlunoUpdate(updateRequest, update);
-        return alunoMapper.responseAlunoUpdate(alunoRepository.save(update));
+        alunoRepository.save(alunoMapper.updateRequestAluno(updateRequest));
+        return alunoMapper.responseAlunoUpdate(update);
+    }
+
+    // DELETE - delete by email
+    public void deleteByEmail(String email){
+        alunoRepository.deleteByEmail(email);
     }
 
 }

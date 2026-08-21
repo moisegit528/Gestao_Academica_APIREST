@@ -22,7 +22,8 @@ public interface AlunoMapper {
     @Mapping(target = "statusMatricula", ignore = true)
     AlunoEntity entityAluno(AlunoRequest requestAluno); // convert request to entity
     AlunoResponse responseAluno(AlunoEntity entityAluno); // convert entity to response
-    AlunoUpdateResponse responseAlunoUpdate(AlunoUpdateRequest requestAluno);
+    AlunoEntity updateRequestAluno (AlunoUpdateRequest requestUpdateAluno);
+    AlunoUpdateResponse responseAlunoUpdate(AlunoEntity entityAluno);
     List<AlunoResponse> listaResponse(List<AlunoEntity> listaEntity); // convert list entity to list response
 
     void updateAluno(AlunoUpdateRequest update, @MappingTarget AlunoEntity alunoEntity);
