@@ -1,7 +1,9 @@
 package com.moisegit528.Gestao_Academica.Controller;
 
 import com.moisegit528.Gestao_Academica.Dto.request.AlunoRequest;
+import com.moisegit528.Gestao_Academica.Dto.request.AlunoUpdateRequest;
 import com.moisegit528.Gestao_Academica.Dto.response.AlunoResponse;
+import com.moisegit528.Gestao_Academica.Dto.response.AlunoUpdateResponse;
 import com.moisegit528.Gestao_Academica.Exception.NotFoundException;
 import com.moisegit528.Gestao_Academica.Service.AlunoService;
 import lombok.RequiredArgsConstructor;
@@ -32,6 +34,12 @@ public class AlunoController {
     @ResponseStatus(HttpStatus.OK)
     public AlunoResponse findByEmail(@PathVariable String email) throws NotFoundException {
         return alunoService.findByEmail(email);
+    }
+
+    @PutMapping("/atualizar/{email}")
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    AlunoUpdateResponse updateAluno(@RequestBody AlunoUpdateRequest updateRequest, @PathVariable String email) throws NotFoundException {
+        return alunoService.updateAluno(email, updateRequest);
     }
 
     @DeleteMapping("/delete/{email}")

@@ -11,6 +11,8 @@ import com.moisegit528.Gestao_Academica.Model.AlunoEntity;
 import com.moisegit528.Gestao_Academica.Repository.AlunoRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -38,16 +40,16 @@ public class AlunoService {
     }
 
     // PUT - update by email
-    public AlunoUpdateResponse updateAluno(AlunoUpdateRequest updateRequest, String email) throws NotFoundException {
-        AlunoEntity update = alunoRepository.findByEmail(email)
+    public AlunoUpdateResponse updateAluno(String email, AlunoUpdateRequest updateRequest) throws NotFoundException {
+        AlunoEntity alunoExistente = alunoRepository.findByEmail(email)
                         .orElseThrow(()-> new NotFoundException("Aluno não encontrado!"));
-        alunoRepository.save(alunoMapper.updateRequestAluno(updateRequest));
-        return alunoMapper.responseAlunoUpdate(update);
+        alunoMapper.updateRequestAluno(updateRequest, alunoExistente);
+        alunoRepository.save(alunoExistente);
+        return alunoMapper.responseAlunoUpdate(alunoExistente);
     }
 
     // DELETE - delete by email
     public void deleteByEmail(String email){
         alunoRepository.deleteByEmail(email);
     }
-
 }

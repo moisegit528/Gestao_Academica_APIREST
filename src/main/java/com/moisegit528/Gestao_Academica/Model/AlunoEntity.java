@@ -23,13 +23,9 @@ public class AlunoEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
-    @NotBlank
     private String nome;
-    @NotBlank
     private String email;
-    @NotBlank
     private String telefone;
-    @NotNull
     @Past
     private LocalDate dataNascimento;
     @CreationTimestamp

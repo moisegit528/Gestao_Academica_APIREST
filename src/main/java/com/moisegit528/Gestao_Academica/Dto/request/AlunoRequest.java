@@ -15,11 +15,15 @@ import java.time.LocalDate;
 public class AlunoRequest {
 
     @JsonProperty(required = true)
+    @NotBlank
     private String nome;
     @JsonProperty(required = true)
+    @NotBlank
     private String email;
     @JsonProperty(required = true)
+    @NotBlank
     private String telefone;
     @JsonProperty(required = true)
+    @NotBlank
     private LocalDate dataNascimento;
 }

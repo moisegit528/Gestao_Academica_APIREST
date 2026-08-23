@@ -1,6 +1,5 @@
 package com.moisegit528.Gestao_Academica.Dto.response;
 
-
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Past;
