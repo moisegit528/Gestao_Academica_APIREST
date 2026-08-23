@@ -22,9 +22,12 @@ public interface AlunoMapper {
     AlunoResponse responseAluno(AlunoEntity entityAluno);// convert entity to response
 
     @Mapping(target = "nome", expression = "java(requestUpdateAluno.getNome() == null || requestUpdateAluno.getNome().isBlank() ? alunoEntity.getNome() : requestUpdateAluno.getNome())")
+    @Mapping(target = "email", expression = "java(requestUpdateAluno.getEmail() == null || requestUpdateAluno.getEmail().isBlank ? alunoEntity.getEmail() : requestUpdateAluno.getEmail())")
+    @Mapping(target = "telefone", expression = "java(requestUpdateAluno.getTelefone() == null || requestUpdateAluno.getTelefone().isBlank ? alunoEntity.getTelefone() : requestAlunoUpdate.getTelefone())")
+    @Mapping(target = "dataNascimento", expression = "java(requestAlunoUpdate.getDataNascimento() == null || requestUpdateAluno.DataNascimento().isBlank ? alunoEntity.getDataNascimento : requestAlunoUpdate.getDataNascimento())")
     void updateRequestAluno(AlunoUpdateRequest requestUpdateAluno, @MappingTarget AlunoEntity alunoEntity);
+    AlunoUpdateResponse responseAlunoUpdate(AlunoEntity entityAluno); // convert entity to response
 
-    AlunoUpdateResponse responseAlunoUpdate(AlunoEntity entityAluno);
     List<AlunoResponse> listaResponse(List<AlunoEntity> listaEntity); // convert list entity to list response
 
 }
