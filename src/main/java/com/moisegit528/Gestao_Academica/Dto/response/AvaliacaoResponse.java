@@ -14,4 +14,6 @@ public class AvaliacaoResponse {
     private String nomeAvaliacao; // mathematics, Portuguese, physics.
     private double notaParcial; // score for each evaluation.
     private LocalDate dataAplicacao; // the day the assessment war or will be administered.
+    private String turma;
+
 }
