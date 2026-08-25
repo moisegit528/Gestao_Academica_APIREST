@@ -9,5 +9,5 @@ import org.mapstruct.NullValuePropertyMappingStrategy;
 public interface AvaliacaoMapper {
 
     AvaliacaoEntity avaliacaoEntity(AvaliacaoRequest requestAvaliacao);
-    
+
 }
