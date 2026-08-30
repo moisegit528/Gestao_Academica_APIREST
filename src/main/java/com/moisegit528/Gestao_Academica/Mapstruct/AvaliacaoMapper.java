@@ -6,7 +6,6 @@ import com.moisegit528.Gestao_Academica.Model.AlunoEntity;
 import com.moisegit528.Gestao_Academica.Model.AvaliacaoEntity;
 import org.mapstruct.Mapper;
 import org.mapstruct.NullValuePropertyMappingStrategy;
-
 import java.util.List;
 
 @Mapper(componentModel = "spring", nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
