@@ -11,5 +11,5 @@ import java.util.UUID;
 public interface AvaliacaoRepository extends JpaRepository<AvaliacaoEntity, UUID> {
     Optional<AvaliacaoEntity> findByNomeAvaliacao(String nomeAvaliacao);
     // retornar nome, notaParcial e data dessa avaliacao.
-    Optional<List<AvaliacaoEntity>> findByTurma(Integer codigoTurma);
+    Optional<List<AvaliacaoEntity>> findByTurma_CodigoTurma(Integer codigoTurma);
 }

@@ -29,7 +29,7 @@ public class AvaliacaoService {
     }
     // GET - list evaluations by class
     List<AvaliacaoResponse> findByTurma(Integer codigoTurma) throws NotFoundException {
-        List<AvaliacaoEntity> searchClass = turmaRepository.findByTurma(codigoTurma)
+        List<AvaliacaoEntity> searchClass = avaliacaoRepository.findByTurma_CodigoTurma(codigoTurma)
                 .orElseThrow(()-> new NotFoundException("Turma não encontrada!"));
         return avaliacaoMapper.avaliacaoResponse(searchClass);
     }

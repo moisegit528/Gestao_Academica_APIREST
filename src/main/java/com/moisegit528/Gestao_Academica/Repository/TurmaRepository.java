@@ -1,15 +1,9 @@
 package com.moisegit528.Gestao_Academica.Repository;
 
-import com.moisegit528.Gestao_Academica.Model.AvaliacaoEntity;
 import com.moisegit528.Gestao_Academica.Model.TurmaEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
-
-import java.util.List;
 import java.util.Optional;
-import java.util.UUID;
 
 public interface TurmaRepository extends JpaRepository<TurmaEntity, Integer> {
-    Optional<TurmaEntity> findBycodigoTurma(Integer codigoTurma);
-    // retornar codigo e semestre da turma.
-    Optional<List<AvaliacaoEntity>> findByTurma(Integer codigoTurma);
+    Optional<TurmaEntity> findBycodigoTurma(Integer codigoTurma);//retornar codigo e semestre da turma.
 }

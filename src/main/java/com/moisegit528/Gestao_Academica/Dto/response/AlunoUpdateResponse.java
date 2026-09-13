@@ -1,8 +1,5 @@
 package com.moisegit528.Gestao_Academica.Dto.response;
 
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Past;
 import lombok.*;
 
 import java.time.LocalDate;
@@ -12,6 +9,7 @@ import java.time.LocalDate;
 @Getter
 @Setter
 @Builder
+@Data
 public class AlunoUpdateResponse {
 
     private String nome;

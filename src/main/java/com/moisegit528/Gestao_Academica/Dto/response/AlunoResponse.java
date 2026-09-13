@@ -10,6 +10,7 @@ import java.time.LocalDate;
 @Getter
 @Setter
 @Builder
+@Data
 public class AlunoResponse {
 
     private String nome;
