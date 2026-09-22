@@ -1,5 +1,6 @@
 package com.moisegit528.Gestao_Academica.Handler;
 
+import com.moisegit528.Gestao_Academica.Exception.BadRequestException;
 import com.moisegit528.Gestao_Academica.Exception.ErrorResponse;
 import com.moisegit528.Gestao_Academica.Exception.NotFoundException;
 import org.springframework.http.HttpStatus;
@@ -18,4 +19,13 @@ public class GlobalExceptionHandler {
                 .build();
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(response);
     }
+    @ExceptionHandler(BadRequestException.class)
+    public ResponseEntity<ErrorResponse> handleBadRequestException(BadRequestException ex) {
+        ErrorResponse badresponse = ErrorResponse.builder()
+                .message(ex.getMessage())
+                .status(HttpStatus.BAD_REQUEST.value())
+                .build();
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(badresponse);
+    }
+
 }
